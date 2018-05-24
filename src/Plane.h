@@ -22,7 +22,7 @@ public:
 
 	int GetAutonomy();
 	
-	string GetDescription();
+	string GetDescription(bool landing);
 
 private:
 	int fuel_remaining;

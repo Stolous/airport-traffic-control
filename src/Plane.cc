@@ -20,8 +20,8 @@ int Plane::GetAutonomy() {
 	return fuel_remaining / fuel_consumption;
 }
 
-string Plane::GetDescription() {
+string Plane::GetDescription(bool landing) {
 	return 	(string)"Flight " + this->flight_number + 
 			(string)" of " + airline->name + 
-			(string)" expected to take-off at " + std::to_string(takeoff_time);
+			(string)" expected to " + (landing ? "land" : "take-off") + " at " + std::to_string(takeoff_time);
 }

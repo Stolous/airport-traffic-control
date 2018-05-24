@@ -27,8 +27,8 @@ void BrowserPanel::UpdateBrowser() {
 	deque<Plane*> plane_queue = EventManager::GetInstance()->takeoff_planes;
 	std::deque<Plane*>::iterator it = plane_queue.begin();
 	while (it != plane_queue.end()) {
-		printf("%s", (*it)->GetDescription().c_str());
-		browser->add((*it)->GetDescription().c_str());
+		printf("%s", (*it)->GetDescription(false).c_str());
+		browser->add((*it)->GetDescription(false).c_str());
 		++it;
 	}
 }
@@ -46,8 +46,8 @@ void TakeoffPanel::UpdateBrowser() {
 	deque<Plane*> plane_queue = EventManager::GetInstance()->takeoff_planes;
 	std::deque<Plane*>::iterator it = plane_queue.begin();
 	while (it != plane_queue.end()) {
-		printf("Plane taking-off: %s", (*it)->GetDescription().c_str());
-		browser->add((*it)->GetDescription().c_str());
+		printf("Plane taking-off: %s", (*it)->GetDescription(false).c_str());
+		browser->add((*it)->GetDescription(false).c_str());
 		++it;
 	}
 }
@@ -64,8 +64,8 @@ void LandingPanel::UpdateBrowser() {
 	deque<Plane*> plane_queue = EventManager::GetInstance()->landing_planes;
 	std::deque<Plane*>::iterator it = plane_queue.begin();
 	while (it != plane_queue.end()) {
-		printf("Landing plane: %s", (*it)->GetDescription().c_str());
-		browser->add((*it)->GetDescription().c_str());
+		printf("Landing plane: %s", (*it)->GetDescription(true).c_str());
+		browser->add((*it)->GetDescription(true).c_str());
 		++it;
 	}
 }
