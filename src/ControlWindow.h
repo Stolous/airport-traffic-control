@@ -6,6 +6,7 @@
 #include <FL/Fl_Tile.H>
 
 #include "ClockBox.h"
+#include "BrowserPanel.h"
 namespace AirportControl {
 
 class ControlWindow : public Fl_Window {
@@ -18,13 +19,13 @@ public:
 	Fl_Box* resizeable;
 
 	// Two left panels
-	Fl_Box* landing_panel;
-	Fl_Box* boarding_panel;
+	LandingPanel* landing_panel;
+	TakeoffPanel* takeoff_panel;
 
 	// panels on the right
 	ClockBox* clock_panel;
-	Fl_Box* upcoming_events_panel;
-	Fl_Box* previous_events_panel;
+	BrowserPanel* upcoming_events_panel;
+	BrowserPanel* previous_events_panel;
 	Fl_Box* actions_panel;
 };
 

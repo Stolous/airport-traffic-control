@@ -16,7 +16,7 @@ void Time::StartTimer(ClockBox* box) {
 
 void Time::Tick(void*) {
 	const char* timeText = getTime().c_str();
-	std::cout << timeText << std::endl;
+	//std::cout << timeText << std::endl;
 	box->copy_label(timeText);
 	++Time::time;
 	Fl::repeat_timeout(1.0, Tick);
